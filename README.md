@@ -7,4 +7,4 @@ Using "Build your own Radar
 
 ## Current version
 
-See [here](https://radar.thoughtworks.com/?documentId=https%3A%2F%2Falan-eu.github.io%2Ftech-radar%2Ftech_radar.csv)
+See [here](https://radar.thoughtworks.com/?documentId=https://raw.githubusercontent.com/alan-eu/tech-radar/main/tech_radar.csv)

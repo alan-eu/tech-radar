@@ -1,52 +1,17 @@
 ﻿name,ring,quadrant,isNew,description
 Typescript,Adopt,Langages & Framework,FALSE,
-Mantine,Adopt,Langages & Framework,TRUE,"Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs:
-
-Branded products (e.g. mobile applications, admin dashboard, landing pages, clinic, Alan Home, ...):
-• Mostly member-facing products, with a strong need to convey Alan’s brand and playfulness.
-• These products must use Murray as their one and only design system
-
-Unbranded products (Eng Tools, Marmot, Sales Tools, …):
-• Mostly internal tools focused on productivity and velocity, where having a playful product matters less or can be counter-productive.
-• These products can use either Murray or Mantine as their design system / component libraries"
+Mantine,Adopt,Langages & Framework,TRUE,Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs
 React Native,Adopt,Langages & Framework,FALSE,
 Expo,Adopt,Langages & Framework,FALSE,
 React,Adopt,Langages & Framework,FALSE,
 Python,Adopt,Langages & Framework,FALSE,
 Flask,Adopt,Langages & Framework,FALSE,
 Pytest,Adopt,Langages & Framework,FALSE,
-Github actions,Assess,Platform,TRUE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions. With this migration we expect:
-•  reduced costs: GitHub does not charge for the orchestration and we will use our own AWS EC2 instances for the compute. It should save ~50% of the cost. (did you know that today running our python test suites cost $2.9?)
-• 🪄 improved DX: CircleCI is not well integrated in our codebase and we've seen many frustration to maintain its config. This migration should greatly improve the experience
-• ⚡ speed: we will aim at having the same timings at first. We'll then have leeway to improve these timings (as we can rely on any EC2 instance!)"
-Circle CI,Hold,Platform,FALSE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions. With this migration we expect:
-•  reduced costs: GitHub does not charge for the orchestration and we will use our own AWS EC2 instances for the compute. It should save ~50% of the cost. (did you know that today running our python test suites cost $2.9?)
-• 🪄 improved DX: CircleCI is not well integrated in our codebase and we've seen many frustration to maintain its config. This migration should greatly improve the experience
-• ⚡ speed: we will aim at having the same timings at first. We'll then have leeway to improve these timings (as we can rely on any EC2 instance!)"
-Qovery,Adopt,Platform,TRUE,"We move our backend apps to Qovery
-• it offers a suitable solution for our needs (See [https://www.notion.so/5cf24398a844481fbc442eb36bafefff?pvs=21](https://www.notion.so/5cf24398a844481fbc442eb36bafefff?pvs=21))
-• Qovery's promise to hide the Kubernetes (system and ecosystem) complexity while offering flexibility (ie. fallback to Kubernetes primitives when Qovery does not have native support) is fulfilled: we managed to easily deploy fr-api without being Kubernetes experts and integrate with Cloudflare Zero Trust & Datadog using their Kubernetes integration
-• it will allow us to be faster at migrating out of Beanstalk while not pushing us into another vendor lock-in solution (ie. there is an easy exit path)
-• we have done our due diligence regarding Qovery alternatives and we’re confident Qovery hits a good balance, providing high value with controlled risks
-• it allows a fine grained permissions mapping between the Kubernetes and AWS security systems
-• it has an awesome integration with Datadog (ie. it will move us forward on the monitoring side with no effort)"
-AWS Beanstalk,Hold,Platform,FALSE,"We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery
-Why?
-AWS Beanstalk setup are slowing us down (ie. high @infra_oncall load + many incidents):
-• unexplained Beanstalk upgrade failures (https://alanhealth.slack.com/archives/C01SU1A923D/p1700054149027359)
-• hard to investigate deployment issues: we have to search in Beanstalk logs, Cloudformation logs, Auto Scaling Groups logs, ...
-• flaky deployment results (eg. transient Docker errors, missing files, ...)
-• long deployment times
-• and https://www.notion.so/4cf5aa15810c48279950e30db3f15228?pvs=21..."
-Heroku,Hold,Platform,FALSE,"We are migrating all ours apps from Heroku to Beanstalk.
-The end contract date of Heroku is set for the 31rst, July 2022.
-💬 You can find the discussion https://github.com/alan-eu/Topics/discussions/16113.
-To quickly recap, we are moving to Beanstalk for these reasons:
-• 1️⃣ Prices are cheaper and more flexible on AWS Beanstalk
-• 2️⃣ Machine size is more flexible (Heroku only serve specific machines)
-• 3️⃣ More control on the infrastructure and build
-• 4️⃣ No more slug sizes issues (no more pre-compile slug apps at all)
-• 5️⃣ Better autoscaling which fits the company needs"
+Github actions,Assess,Platform,TRUE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
+Circle CI,Hold,Platform,FALSE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
+Qovery,Adopt,Platform,TRUE,We move our backend apps from AWS Beanstalk to Qovery.
+AWS Beanstalk,Hold,Platform,FALSE,We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery.
+Heroku,Hold,Platform,FALSE,"We are migrating all ours apps from Heroku to Beanstalk.The end contract date of Heroku is set for the 31rst, July 2022. You can find the discussion https://github.com/alan-eu/Topics/discussions/16113."
 Living documentation with Mkdocs,Trial,Tools,TRUE,Keeping document up-to-date and consistent with the code (see https://alanhealth.slack.com/archives/CB55CK36Y/p1712844998304029)
 Consistency alerts 🇫🇷,Trial,Tools,FALSE,
 Behave and Behavior-Driven Development (BDD),Trial,Techniques,TRUE,Bringing business and engineering closer

@@ -1,0 +1,13 @@
+ name ,ring,quadrant,isNew,description
+Living documentation with Mkdocs,Trial,Tools,TRUE,Keeping document up-to-date and consistent with the code
+Consistency alerts 🇫🇷,Trial,Tools,TRUE,
+Behave and Behavior-Driven Development (BDD),Trial,Techniques,TRUE,Bringing business and engineering closer
+NotSet Sentinel value usage examples,Trial,Techniques,TRUE,
+Nullables,Trial,Techniques,TRUE,Integration and E2E testing with 3rd party services
+SQL model brokers,Trial,Techniques,TRUE,Easily write performant SQL queries avoiding N+1
+Dependency injection with `@inject()` decorator,Trial,Techniques,TRUE,Provide multiple implementations of the same interface (e.g. a http client for multiple provider)
+Using a Google Sheet as input,Trial,Techniques,TRUE,Ingest 3rd party data
+Rolling out wide changes safely,Assess,Techniques,TRUE,
+Caching,Adopt,Techniques,TRUE,
+State machines,Assess,Techniques,TRUE,
+Side effects bubbling,Trial,Techniques,TRUE,

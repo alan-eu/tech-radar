@@ -1,17 +1,17 @@
 ﻿name,ring,quadrant,isNew,description
-Typescript,Adopt,Langages & Framework,FALSE,
-Mantine,Adopt,Langages & Framework,TRUE,Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs
-React Native,Adopt,Langages & Framework,FALSE,
-Expo,Adopt,Langages & Framework,FALSE,
-React,Adopt,Langages & Framework,FALSE,
-Python,Adopt,Langages & Framework,FALSE,
-Flask,Adopt,Langages & Framework,FALSE,
-Pytest,Adopt,Langages & Framework,FALSE,
-Github actions,Assess,Platform,TRUE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
-Circle CI,Hold,Platform,FALSE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
-Qovery,Adopt,Platform,TRUE,We move our backend apps from AWS Beanstalk to Qovery.
-AWS Beanstalk,Hold,Platform,FALSE,We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery.
-Heroku,Hold,Platform,FALSE,"We are migrating all ours apps from Heroku to Beanstalk.The end contract date of Heroku is set for the 31rst, July 2022. You can find the discussion https://github.com/alan-eu/Topics/discussions/16113."
+Typescript,Adopt,Languages & Frameworks,FALSE,
+Mantine,Adopt,Languages & Frameworks,TRUE,Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs
+React Native,Adopt,Languages & Frameworks,FALSE,
+Expo,Adopt,Languages & Frameworks,FALSE,
+React,Adopt,Languages & Frameworks,FALSE,
+Python,Adopt,Languages & Frameworks,FALSE,
+Flask,Adopt,Languages & Frameworks,FALSE,
+Pytest,Adopt,Languages & Frameworks,FALSE,
+Github actions,Assess,Platforms,TRUE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
+Circle CI,Hold,Platforms,FALSE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
+Qovery,Adopt,Platforms,TRUE,We move our backend apps from AWS Beanstalk to Qovery.
+AWS Beanstalk,Hold,Platforms,FALSE,We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery.
+Heroku,Hold,Platforms,FALSE,"We are migrating all ours apps from Heroku to Beanstalk.The end contract date of Heroku is set for the 31rst, July 2022. You can find the discussion https://github.com/alan-eu/Topics/discussions/16113."
 Living documentation with Mkdocs,Trial,Tools,TRUE,Keeping document up-to-date and consistent with the code (see https://alanhealth.slack.com/archives/CB55CK36Y/p1712844998304029)
 Consistency alerts 🇫🇷,Trial,Tools,FALSE,
 Behave and Behavior-Driven Development (BDD),Trial,Techniques,TRUE,Bringing business and engineering closer

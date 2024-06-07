@@ -1,26 +1,34 @@
-﻿name,ring,quadrant,isNew,description
-Typescript,Adopt,Languages & Frameworks,FALSE,
-Mantine,Adopt,Languages & Frameworks,TRUE,Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs
-React Native,Adopt,Languages & Frameworks,FALSE,
-Expo,Adopt,Languages & Frameworks,FALSE,
-React,Adopt,Languages & Frameworks,FALSE,
-Python,Adopt,Languages & Frameworks,FALSE,
-Flask,Adopt,Languages & Frameworks,FALSE,
-Pytest,Adopt,Languages & Frameworks,FALSE,
-Github actions,Assess,Platforms,TRUE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
-Circle CI,Hold,Platforms,FALSE,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions."
-Qovery,Adopt,Platforms,TRUE,We move our backend apps from AWS Beanstalk to Qovery.
-AWS Beanstalk,Hold,Platforms,FALSE,We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery.
-Heroku,Hold,Platforms,FALSE,"We are migrating all ours apps from Heroku to Beanstalk.The end contract date of Heroku is set for the 31rst, July 2022. You can find the discussion https://github.com/alan-eu/Topics/discussions/16113."
-Living documentation with Mkdocs,Trial,Tools,TRUE,Keeping document up-to-date and consistent with the code (see https://alanhealth.slack.com/archives/CB55CK36Y/p1712844998304029)
-Consistency alerts 🇫🇷,Trial,Tools,FALSE,
-Behave and Behavior-Driven Development (BDD),Trial,Techniques,TRUE,Bringing business and engineering closer
-NotSet Sentinel value usage examples,Trial,Techniques,FALSE,
-Nullables,Trial,Techniques,FALSE,Integration and E2E testing with 3rd party services
-SQL model brokers,Trial,Techniques,FALSE,Easily write performant SQL queries avoiding N+1
-Dependency injection with `@inject()` decorator,Trial,Techniques,FALSE,Provide multiple implementations of the same interface (e.g. a http client for multiple provider)
-Using a Google Sheet as input,Trial,Techniques,FALSE,Ingest 3rd party data
-Rolling out wide changes safely,Assess,Techniques,FALSE,
-Caching,Adopt,Techniques,FALSE,
-State machines,Assess,Techniques,FALSE,
-Side effects bubbling,Trial,Techniques,FALSE,
+﻿name,quadrant,ring,description,isNew
+Side effects bubbling,Techniques,Trial,,FALSE
+Using a Google Sheet as input,Techniques,Trial,Ingest 3rd party data,FALSE
+Rolling out wide changes safely,Techniques,Assess,"Refactoring components that are extensively used throughout the codebase can be very risky. It is hard to predict the negative impacts, or the bugs introduced by such a refactoring. One has to understand the call-sites to make sure the change is safe.
+The risks are increased when the granularity also changes (e.g., refactoring a function returning an object so that it returns a list of objects). ",FALSE
+Consistency alerts,Tools,Trial,,FALSE
+Caching,Techniques,Adopt,"We have a dedicated code component: Alan Cache (https://www.notion.so/Alan-Cache-e8e1e6b060f94b00865f35152f2eeb3f?pvs=21) it offers many capabilities, please get in touch with their maintainers for more info.",FALSE
+State machines,Techniques,Assess,"State machines can be useful to:
+• Communicate with stakeholders (that might be your future fellow eng.), or/and
+• Structure our code in a predictable and consistent way.",FALSE
+Dependency injection with `@inject()` decorator,Techniques,Trial,Provide multiple implementations of the same interface (e.g. a http client for multiple provider),FALSE
+SQL model brokers,Techniques,Trial,Easily write performant SQL queries avoiding N+1,FALSE
+Nullables,Techniques,Trial,Integration and E2E testing with 3rd party services,FALSE
+NotSet Sentinel value usage examples,Techniques,Trial,,FALSE
+Living documentation with Mkdocs,Tools,Trial,Keeping document up-to-date and consistent with the code (see https://alanhealth.slack.com/archives/CB55CK36Y/p1712844998304029),TRUE
+Behave and Behavior-Driven Development (BDD),Techniques,Assess,Bringing business and engineering closer,TRUE
+Heroku,Platforms,Hold,"We are migrating all ours apps from Heroku to Beanstalk.The end contract date of Heroku is set for the 31rst, July 2022. You can find the discussion https://github.com/alan-eu/Topics/discussions/16113.",FALSE
+AWS Beanstalk,Platforms,Hold,We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery.,FALSE
+Qovery,Platforms,Adopt,We move our backend apps from AWS Beanstalk to Qovery.,TRUE
+Pytest,Languages & Frameworks,Adopt,,FALSE
+Flask,Languages & Frameworks,Adopt,,FALSE
+Python,Languages & Frameworks,Adopt,,FALSE
+React,Languages & Frameworks,Adopt,,FALSE
+Expo,Languages & Frameworks,Adopt,,FALSE
+React Native,Languages & Frameworks,Adopt,,FALSE
+Mantine,Languages & Frameworks,Adopt,Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs,TRUE
+Typescript,Languages & Frameworks,Adopt,,FALSE
+Circle CI,Platforms,Hold,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions.",FALSE
+Github actions,Platforms,Adopt,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions.",TRUE
+DevBox,Tools,Adopt,To make them isolated (no more conflict with each of us singular environment) and reproducible (no more uncontrolled dependency updates).,TRUE
+React Query,Languages & Frameworks,Adopt,,FALSE
+Realtime Queue system,Techniques,Adopt,"Realtime Queue, an enhancement to our job processing capabilities.This system is designed to handle tasks that require immediate attention and swift execution, ensuring that time-sensitive operations are completed with minimal latency.",FALSE
+Mypy,Languages & Frameworks,Adopt,Python Type Checking,FALSE
+Timeline,Techniques,Adopt,"We have many Historizable models in our codebase. Those models are the core of many insurance feature...So far, we didn't have a clear way to manipulate a consistent group of related Historizables, each use-case reinvented the wheel... Timeline tries to fill that gap!It's used here and there already, eg: in the proposal builder, in subscriptions, in employments, in prevoyance, and maybe soon billing!",FALSE

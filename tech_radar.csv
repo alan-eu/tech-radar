@@ -1,34 +1,52 @@
 ﻿name,quadrant,ring,description,isNew
-Side effects bubbling,Techniques,Trial,,FALSE
-Using a Google Sheet as input,Techniques,Trial,Ingest 3rd party data,FALSE
-Rolling out wide changes safely,Techniques,Assess,"Refactoring components that are extensively used throughout the codebase can be very risky. It is hard to predict the negative impacts, or the bugs introduced by such a refactoring. One has to understand the call-sites to make sure the change is safe.
-The risks are increased when the granularity also changes (e.g., refactoring a function returning an object so that it returns a list of objects). ",FALSE
-Consistency alerts,Tools,Trial,,FALSE
-Caching,Techniques,Adopt,"We have a dedicated code component: Alan Cache (https://www.notion.so/Alan-Cache-e8e1e6b060f94b00865f35152f2eeb3f?pvs=21) it offers many capabilities, please get in touch with their maintainers for more info.",FALSE
-State machines,Techniques,Assess,"State machines can be useful to:
-• Communicate with stakeholders (that might be your future fellow eng.), or/and
-• Structure our code in a predictable and consistent way.",FALSE
-Dependency injection with `@inject()` decorator,Techniques,Trial,Provide multiple implementations of the same interface (e.g. a http client for multiple provider),FALSE
-SQL model brokers,Techniques,Trial,Easily write performant SQL queries avoiding N+1,FALSE
-Nullables,Techniques,Trial,Integration and E2E testing with 3rd party services,FALSE
-NotSet Sentinel value usage examples,Techniques,Trial,,FALSE
-Living documentation with Mkdocs,Tools,Trial,Keeping document up-to-date and consistent with the code (see https://alanhealth.slack.com/archives/CB55CK36Y/p1712844998304029),TRUE
-Behave and Behavior-Driven Development (BDD),Techniques,Assess,Bringing business and engineering closer,TRUE
-Heroku,Platforms,Hold,"We are migrating all ours apps from Heroku to Beanstalk.The end contract date of Heroku is set for the 31rst, July 2022. You can find the discussion https://github.com/alan-eu/Topics/discussions/16113.",FALSE
-AWS Beanstalk,Platforms,Hold,We have https://medium.com/alan/an-update-on-our-hosting-setup-d386afe01563 → Switch to Qovery.,FALSE
-Qovery,Platforms,Adopt,We move our backend apps from AWS Beanstalk to Qovery.,TRUE
-Pytest,Languages & Frameworks,Adopt,,FALSE
-Flask,Languages & Frameworks,Adopt,,FALSE
-Python,Languages & Frameworks,Adopt,,FALSE
-React,Languages & Frameworks,Adopt,,FALSE
-Expo,Languages & Frameworks,Adopt,,FALSE
-React Native,Languages & Frameworks,Adopt,,FALSE
-Mantine,Languages & Frameworks,Adopt,Earlier this year we decided that Murray would be the only design system and component library on all our products (including internal ones). We have https://github.com/alan-eu/Topics/discussions/24344#discussioncomment-7839827 that decision and allow either Murray or Mantine depending on the product needs,TRUE
-Typescript,Languages & Frameworks,Adopt,,FALSE
-Circle CI,Platforms,Hold,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions.",FALSE
-Github actions,Platforms,Adopt,"As https://alanhealth.slack.com/archives/C017M1KQ57U/p1710405465735339, we are migrating away from CircleCI in favor of GitHub Actions.",TRUE
-DevBox,Tools,Adopt,To make them isolated (no more conflict with each of us singular environment) and reproducible (no more uncontrolled dependency updates).,TRUE
-React Query,Languages & Frameworks,Adopt,,FALSE
-Realtime Queue system,Techniques,Adopt,"Realtime Queue, an enhancement to our job processing capabilities.This system is designed to handle tasks that require immediate attention and swift execution, ensuring that time-sensitive operations are completed with minimal latency.",FALSE
-Mypy,Languages & Frameworks,Adopt,Python Type Checking,FALSE
-Timeline,Techniques,Adopt,"We have many Historizable models in our codebase. Those models are the core of many insurance feature...So far, we didn't have a clear way to manipulate a consistent group of related Historizables, each use-case reinvented the wheel... Timeline tries to fill that gap!It's used here and there already, eg: in the proposal builder, in subscriptions, in employments, in prevoyance, and maybe soon billing!",FALSE
+Expo,Languages & Frameworks,Adopt,"Development platform that provides tools, libraries, and services to build, deploy, and quickly iterate on React Native apps across iOS, Android, and web",FALSE
+FastAPI,Languages & Frameworks,Assess,"Modern Python web framework for building APIs with high performance, automatic documentation, and type validation",TRUE
+Flask,Languages & Frameworks,Adopt,Lightweight Python web framework focused on simplicity and flexibility for building web applications,FALSE
+Mantine,Languages & Frameworks,Adopt,"A React component library with a focus on accessibility, customization, and developer experience that provides a comprehensive set of UI components and hooks",FALSE
+Mypy,Languages & Frameworks,Adopt,Static type checker for Python that helps catch errors before runtime,FALSE
+Pytest,Languages & Frameworks,Adopt,Python testing framework emphasizing simplicity and scalability for unit and functional testing,FALSE
+Python,Languages & Frameworks,Adopt,"High-level, versatile programming language known for readability and extensive library ecosystem",FALSE
+React,Languages & Frameworks,Adopt,Javascript library for building user interfaces with reusable components and virtual DOM.,FALSE
+React Native,Languages & Frameworks,Adopt,Framework for building native mobile applications using React architecture.,FALSE
+React Query,Languages & Frameworks,Adopt,"Data-fetching library for React that handles caching, synchronization, and server state updates",FALSE
+Redux,Languages & Frameworks,Hold,Predictable state container for JavaScript apps that centralizes application state management,TRUE
+Typescript,Languages & Frameworks,Adopt,Strongly-typed superset of JavaScript that enhances code quality and developer productivity through static type checking,FALSE
+AI powered E2E testing benchmark,Platforms,Assess,Make E2E testing easy to set up and maintain + use AI to reduce flakiness.,FALSE
+Airflow,Platforms,Adopt,Workflow orchestration platform that programmatically schedules and monitors data pipelines,FALSE
+AWS Beanstalk,Platforms,Hold,"PaaS service that handles deployment, scaling, and management of web applications",FALSE
+Circle CI,Platforms,Hold,Continuous integration and delivery platform with customizable workflows and parallel execution,FALSE
+Github actions,Platforms,Adopt,CI/CD platform integrated with GitHub repositories for automated workflows,FALSE
+Heroku,Platforms,Hold,Cloud platform that simplifies application deployment with managed runtime environments,FALSE
+Metabase,Platforms,Adopt,Business intelligence tool that enables data visualization and exploration without SQL knowledge,FALSE
+Qovery,Platforms,Adopt,Cloud platform enabling simplified deployment of applications on Kubernetes,FALSE
+DevBox,Tools,Adopt,"Development environment tool that creates isolated, reproducible workspaces with preconfigured dependencies for consistent development across team members",FALSE
+Graphite,Tools,Hold,"Git workflow tool that transforms large pull requests into smaller, reviewable stacked changes for more efficient code reviews",TRUE
+LaunchDarkly,Tools,Trial,"Feature management platform enabling feature flags, A/B testing, and controlled rollouts",TRUE
+Living documentation with Mkdocs,Tools,Assess,Keeping document up-to-date and consistent with the code,TRUE
+Lottie,Tools,Hold,"Library that renders Adobe After Effects animations in real-time, enabling high-quality animations across multiple platforms",TRUE
+Meltano,Tools,Adopt,DataOps platform that integrates various data tools for ELT workflows and orchestration,FALSE
+Mergify,Tools,Assess,"GitHub automation tool that streamlines pull request workflows with automatic merging, backporting, and queue management",TRUE
+Nx,Tools,Assess,Extensible build framework for monorepos that enables efficient development across multiple projects,TRUE
+OpenAPI,Tools,Trial,"Specification for machine-readable interface files for describing, producing, and consuming RESTful APIs",TRUE
+PostgreSQL,Tools,Adopt,"Powerful open-source relational database with advanced features, extensibility, and reliability",TRUE
+Rive,Tools,Adopt,"Interactive animation tool and runtime that allows for creating and implementing lightweight, interactive animations controlled at runtime",TRUE
+Sherlo,Tools,Assess,Visual regression testing tool that detects UI changes across application versions,TRUE
+Snowflake,Tools,Adopt,"Cloud data platform that provides storage, processing, and analytics capabilities with separation of compute and storage",TRUE
+SQLAlchemy + Alembic,Tools,Adopt,Python SQL toolkit and ORM with Alembic providing database migration capabilities,TRUE
+Terraform / Infra as code,Tools,Adopt,Infrastructure-as-Code tool that enables declarative definition and automated provisioning of cloud resources,TRUE
+The syncer,Tools,Adopt,Data transformation tool (in-house),FALSE
+Tracking dead code,Tools,Assess,Help developers determine if they can remove code they think is likely dead,TRUE
+Waldo,Tools,Adopt,No-code mobile testing platform that automates functional testing for mobile applications,TRUE
+Alan Cache,Techniques,Adopt,"Provides a comprehensive caching mechanism, that allows storing cached values in local memory and/or Redis",FALSE
+Behave and Behavior-Driven Development (BDD),Techniques,Trial,"Testing approach that translates business requirements into executable test scenarios, bridging the communication gap between engineers and business experts",FALSE
+Dependency injection with `@inject()` decorator,Techniques,Trial,"Design pattern to provide dependencies to functions or classes from the outside rather than creating them internally, promoting loose coupling and easier testing",FALSE
+E2E testing with 3rd party services - Nullables,Techniques,Adopt,Integration and E2E testing with 3rd party services,FALSE
+Frontend modules,Techniques,Adopt,"Organize frontend codebase to group code by business domain, similarly to modular monolith on the backend",TRUE
+NotSet Sentinel value usage examples,Techniques,Trial,Pattern used to distinguish between None as a valid value and an unset/undefined parameter,FALSE
+Observables,Techniques,Adopt,A reactive state management library built on MobX that enables observable-based reactivity outside React's component lifecycle,TRUE
+Realtime Queue system,Techniques,Adopt,"System designed to handle tasks that require immediate attention and swift execution, ensuring that time-sensitive operations are completed with minimal latency",FALSE
+Side effects bubbling,Techniques,Trial,"A Python pattern that defers side effects (like emails or jobs) from internal functions to be executed at the API level after database commit, using context managers",FALSE
+SQL model brokers,Techniques,Adopt,Easily write performant SQL queries avoiding N+1,FALSE
+State machines,Techniques,Assess,"A pattern that makes implicit state transitions explicit, helping communicate business logic with stakeholders and providing a predictable way to structure code",FALSE
+Timeline,Techniques,Adopt,"A pattern that represents and manipulates time-based data through a list of non-overlapping periods, allowing operations like querying active periods, merging similar periods, and applying transformations across periods",FALSE
+Transfer data from Turing to backend,Techniques,Adopt,"A tool that transfers data from Turing (Snowflake) to PostgreSQL backend tables using automated daily synchronization, replacing custom import commands",FALSE

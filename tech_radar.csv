@@ -17,12 +17,12 @@ AWS Beanstalk,Platforms,Hold,"PaaS service that handles deployment, scaling, and
 Circle CI,Platforms,Hold,Continuous integration and delivery platform with customizable workflows and parallel execution,FALSE
 Github actions,Platforms,Adopt,CI/CD platform integrated with GitHub repositories for automated workflows,FALSE
 Heroku,Platforms,Hold,Cloud platform that simplifies application deployment with managed runtime environments,FALSE
-Keycloak,Platforms,Adopt,Keycloak is an open-source software product to allow single sign-on with identity and access management aimed at modern applications and services,FALSE
+Keycloak,Platforms,Adopt,Keycloak is an open-source software product to allow single sign-on with identity and access management aimed at modern applications and services,TRUE
 Metabase,Platforms,Adopt,Business intelligence tool that enables data visualization and exploration without SQL knowledge,FALSE
 Qovery,Platforms,Adopt,Cloud platform enabling simplified deployment of applications on Kubernetes,FALSE
 DevBox,Tools,Adopt,"Development environment tool that creates isolated, reproducible workspaces with preconfigured dependencies for consistent development across team members",FALSE
 Graphite,Tools,Hold,"Git workflow tool that transforms large pull requests into smaller, reviewable stacked changes for more efficient code reviews",TRUE
-Keycloakify,Tools,Adopt,"Keycloakify is a tool for creating custom Keycloak themes, enabling you to modify the appearance and behavior of Keycloak's user interfaces using React. More details in Keycloakify (Keycloak theme) (https://www.notion.so/Keycloakify-Keycloak-theme-17b1426e8be78027a328cd3ad3e4bc32?pvs=21)",FALSE
+Keycloakify,Tools,Adopt,"Keycloakify is a tool for creating custom Keycloak themes, enabling you to modify the appearance and behavior of Keycloak's user interfaces using React. More details in Keycloakify (Keycloak theme) (https://www.notion.so/Keycloakify-Keycloak-theme-17b1426e8be78027a328cd3ad3e4bc32?pvs=21)",TRUE
 LaunchDarkly,Tools,Trial,"Feature management platform enabling feature flags, A/B testing, and controlled rollouts",TRUE
 Living documentation with Mkdocs,Tools,Assess,Keeping document up-to-date and consistent with the code,TRUE
 Lottie,Tools,Hold,"Library that renders Adobe After Effects animations in real-time, enabling high-quality animations across multiple platforms",TRUE
@@ -44,6 +44,7 @@ Behave and Behavior-Driven Development (BDD),Techniques,Trial,"Testing approach 
 Dependency injection with `@inject()` decorator,Techniques,Trial,"Design pattern to provide dependencies to functions or classes from the outside rather than creating them internally, promoting loose coupling and easier testing",FALSE
 E2E testing with 3rd party services - Nullables,Techniques,Adopt,Integration and E2E testing with 3rd party services,FALSE
 Frontend modules,Techniques,Adopt,"Organize frontend codebase to group code by business domain, similarly to modular monolith on the backend",TRUE
+Historizable with Relatives,Techniques,Hold,"An SQLAlchemy model mixin that automatically sets start dates, end dates and cancelled statuses of related models",TRUE
 NotSet Sentinel value usage examples,Techniques,Trial,Pattern used to distinguish between None as a valid value and an unset/undefined parameter,FALSE
 Observables,Techniques,Adopt,A reactive state management library built on MobX that enables observable-based reactivity outside React's component lifecycle,TRUE
 Realtime Queue system,Techniques,Adopt,"System designed to handle tasks that require immediate attention and swift execution, ensuring that time-sensitive operations are completed with minimal latency",FALSE

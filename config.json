@@ -24,16 +24,16 @@
   },
   "quadrants": [
     {
-      "id": "languages-and-frameworks",
-      "title": "Languages & Frameworks",
-      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
-      "color": "#a3b18a"
-    },
-    {
       "id": "techniques",
       "title": "Techniques",
       "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
       "color": "#588157"
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
+      "color": "#40713f"
     },
     {
       "id": "platforms",
@@ -42,10 +42,10 @@
       "color": "#3f633e"
     },
     {
-      "id": "tools",
-      "title": "Tools",
-      "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
-      "color": "#40713f"
+      "id": "languages-and-frameworks",
+      "title": "Languages & Frameworks",
+      "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
+      "color": "#a3b18a"
     }
   ],
   "rings": [

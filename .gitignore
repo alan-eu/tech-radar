@@ -1,3 +1,6 @@
 .DS_Store
 .specstory
+build
 node_modules
+.techradar/
+.specstory/

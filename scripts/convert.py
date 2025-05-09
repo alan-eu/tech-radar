@@ -4,6 +4,7 @@ python scripts/convert.py
 """
 
 import csv
+import operator
 import os
 import string
 import subprocess
@@ -46,7 +47,7 @@ def get_revision_and_dates() -> list[tuple[str, str]]:
             previous_date = date_str
             unique_revisions.append((date_str, revision))
 
-    unique_revisions.reverse()
+    unique_revisions.sort()
 
     return unique_revisions
 
@@ -84,7 +85,9 @@ def get_file_name(row: dict) -> str:
     Get the file name for an entry in the tech radar.
     """
     name = row["name"].lower()
-    name = "".join(c for c in name if c in string.ascii_lowercase or c in string.digits or c == " ")    
+    name = "".join(
+        c for c in name if c in string.ascii_lowercase or c in string.digits or c == " "
+    )
     name = name.strip()
     name = name.replace(" ", "-")
     return f"{name}.md"
@@ -97,7 +100,7 @@ def get_file_template(row: dict) -> str:
     quadrant = QUADRANTS_MAP[row["quadrant"]]
     ring = RINGS_MAP[row["ring"]]
     return f"""---
-title: {row["name"]}
+title: {row["name"].strip('"')}
 ring: {ring}
 quadrant: {quadrant}
 tags: []

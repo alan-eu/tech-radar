@@ -5,6 +5,7 @@ python scripts/convert.py
 
 import csv
 import os
+import string
 import subprocess
 
 FILE_PATH = "tech_radar.csv"
@@ -82,7 +83,11 @@ def get_file_name(row: dict) -> str:
     """
     Get the file name for an entry in the tech radar.
     """
-    return f"{row['name'].lower().replace(' ', '-')}.md"
+    name = row["name"].lower()
+    name = "".join(c for c in name if c in string.ascii_lowercase or c in string.digits or c == " ")    
+    name = name.strip()
+    name = name.replace(" ", "-")
+    return f"{name}.md"
 
 
 def get_file_template(row: dict) -> str:
@@ -95,13 +100,16 @@ def get_file_template(row: dict) -> str:
 title: {row["name"]}
 ring: {ring}
 quadrant: {quadrant}
+tags: []
 ---
 
 {row["description"]}
 """
 
 
-def has_state_changed(previous_state: dict, new_state: dict) -> bool:
+def has_state_changed(previous_state: dict | None, new_state: dict) -> bool:
+    if previous_state is None:
+        return True
     for k, v in previous_state.items():
         if k == "isNew":
             continue
@@ -121,12 +129,11 @@ def main():
         headers = get_revision_headers(content)
         for row in parse_revision_content(content, headers):
             previous_state = previous_states.get(row["name"])
-            if previous_state is not None:
-                if has_state_changed(previous_state, row):
-                    with open(
-                        os.path.join(RADAR_PATH, date_str, get_file_name(row)), "w"
-                    ) as f:
-                        f.write(get_file_template(row))
+            if has_state_changed(previous_state, row):
+                with open(
+                    os.path.join(RADAR_PATH, date_str, get_file_name(row)), "w"
+                ) as f:
+                    f.write(get_file_template(row))
             previous_states[row["name"]] = row
 
 

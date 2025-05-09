@@ -3,9 +3,26 @@ Run from the root directory:
 python scripts/convert.py
 """
 
+import csv
+import os
 import subprocess
 
 FILE_PATH = "tech_radar.csv"
+RADAR_PATH = "radar"
+
+QUADRANTS_MAP = {
+    "Languages & Frameworks": "languages-and-frameworks",
+    "Techniques": "techniques",
+    "Platforms": "platforms",
+    "Tools": "tools",
+}
+
+RINGS_MAP = {
+    "Adopt": "adopt",
+    "Trial": "trial",
+    "Assess": "assess",
+    "Hold": "hold",
+}
 
 
 def get_revision_and_dates() -> list[tuple[str, str]]:
@@ -42,7 +59,76 @@ def get_revision_content(revision: str) -> str:
     )
 
 
-if __name__ == "__main__":
+def get_revision_headers(content: str) -> list[str]:
+    """
+    Get the headers of the revision.
+    """
+    return [
+        header.strip()
+        for header in content.strip("\ufeff").split("\n")[0].strip().split(",")
+    ]
+
+
+def parse_revision_content(content: str, headers: list[str]) -> list[tuple[str, str]]:
+    """
+    Parse the content of the revision.
+    """
+    reader = csv.DictReader(content.split("\n"), fieldnames=headers)
+    next(reader)  # Skip the header row
+    return [row for row in reader]
+
+
+def get_file_name(row: dict) -> str:
+    """
+    Get the file name for an entry in the tech radar.
+    """
+    return f"{row['name'].lower().replace(' ', '-')}.md"
+
+
+def get_file_template(row: dict) -> str:
+    """
+    Get the Markdown template for an entry in the tech radar.
+    """
+    quadrant = QUADRANTS_MAP[row["quadrant"]]
+    ring = RINGS_MAP[row["ring"]]
+    return f"""---
+title: {row["name"]}
+ring: {ring}
+quadrant: {quadrant}
+---
+
+{row["description"]}
+"""
+
+
+def has_state_changed(previous_state: dict, new_state: dict) -> bool:
+    for k, v in previous_state.items():
+        if k == "isNew":
+            continue
+        if v != new_state[k]:
+            return True
+    return False
+
+
+def main():
+    os.makedirs(RADAR_PATH, exist_ok=True)
+
+    previous_states = {}
+
     for date_str, revision in get_revision_and_dates():
+        os.makedirs(os.path.join(RADAR_PATH, date_str), exist_ok=True)
         content = get_revision_content(revision)
-        print(content)
+        headers = get_revision_headers(content)
+        for row in parse_revision_content(content, headers):
+            previous_state = previous_states.get(row["name"])
+            if previous_state is not None:
+                if has_state_changed(previous_state, row):
+                    with open(
+                        os.path.join(RADAR_PATH, date_str, get_file_name(row)), "w"
+                    ) as f:
+                        f.write(get_file_template(row))
+            previous_states[row["name"]] = row
+
+
+if __name__ == "__main__":
+    main()

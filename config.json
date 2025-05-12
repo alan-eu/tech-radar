@@ -13,71 +13,71 @@
   },
   "sections": ["radar", "tags", "list"],
   "colors": {
-    "foreground": "#fcf2e6",
-    "background": "#113521",
-    "highlight": "#d4a373",
+    "foreground": "#282830",
+    "background": "#ffffff",
+    "highlight": "#5C59F3",
     "content": "#fff",
-    "text": "#575757",
-    "link": "#bc6c25",
+    "text": "#282830",
+    "link": "#404048",
     "border": "rgba(255, 255, 255, 0.1)",
-    "tag": "rgba(255, 255, 255, 0.1)"
+    "tag": "#D6DBFF"
   },
   "quadrants": [
     {
       "id": "techniques",
       "title": "Techniques",
       "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
-      "color": "#588157"
+      "color": "#2AA79C"
     },
     {
       "id": "tools",
       "title": "Tools",
       "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
-      "color": "#40713f"
+      "color": "#FF9D00"
     },
     {
       "id": "platforms",
       "title": "Platforms & Operations",
       "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
-      "color": "#3f633e"
+      "color": "#579DFF"
     },
     {
       "id": "languages-and-frameworks",
       "title": "Languages & Frameworks",
       "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
-      "color": "#a3b18a"
+      "color": "#FFABB0"
     }
   ],
   "rings": [
     {
       "id": "adopt",
       "title": "Adopt",
-      "description": "",
-      "color": "#588157",
+      "description": "The technology has proven its value and reliability, making it recommended for wider adoption within the organization or industry.",
+      "color": "#7FCA6C",
       "radius": 0.5,
       "strokeWidth": 5
     },
     {
       "id": "trial",
       "title": "Trial",
-      "description": "",
-      "color": "#457b9d",
+      "description": "The technology has shown enough potential to be implemented in a limited capacity. This phase involves testing in controlled environments or specific use cases.",
+      "color": "#579DFF",
       "radius": 0.69,
       "strokeWidth": 3
     },
     {
       "id": "assess",
       "title": "Assess",
-      "description": "",
-      "color": "#bc6c25",
+      "description": "In this phase, we identify and evaluate new technologies or techniques.",
+      "color": "#FFB619",
       "radius": 0.85,
       "strokeWidth": 2
     },
     {
       "id": "hold",
       "title": "Hold",
-      "description": "",
-      "color": "#d62828",
+      "description": "The technology should not be used in new projects. Current projects may be migrated to a more suitable technology.",
+      "color": "#ED4E4E",
       "radius": 1,
       "strokeWidth": 0.75
     }
@@ -105,25 +105,36 @@
   },
   "social": [
     {
-      "href": "https://twitter.com/aoepeople",
+      "href": "https://x.com/avec_alan",
       "icon": "x"
     },
     {
-      "href": "https://www.linkedin.com/company/aoe",
+      "href": "https://www.linkedin.com/company/avec-alan",
       "icon": "linkedIn"
     },
     {
-      "href": "https://www.xing.com/company/aoe",
-      "icon": "xing"
+      "href": "https://github.com/alan-eu",
+      "icon": "github"
     },
     {
-      "href": "https://github.com/aoepeople",
-      "icon": "github"
+      "href": "https://www.facebook.com/withalan",
+      "icon": "facebook"
+    },
+    {
+      "href": "https://www.instagram.com/avec_alan",
+      "icon": "instagram"
+    },
+    {
+      "href": "https://www.youtube.com/@avec_Alan",
+      "icon": "youtube"
+    },
+    {
+      "href": "https://www.tiktok.com/@avecalan",
+      "icon": "tiktok"
     }
   ],
-  "imprint": "https://www.aoe.com/en/imprint.html",
   "labels": {
-    "title": "Technology Radar",
+    "title": "Alan Technology Radar",
     "imprint": "Legal Information",
     "quadrant": "Quadrant",
     "quadrantOverview": "Quadrant Overview",

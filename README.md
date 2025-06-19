@@ -1,10 +1,5 @@
 # Alan - Tech-radar
 
-## How ?
+The tech radar has moved to https://tech-radar.alan.com/
 
-Using "Build your own Radar
-" from Thoughtworks -> https://www.thoughtworks.com/radar/byor
-
-## Current version
-
-See [here](https://radar.thoughtworks.com/?documentId=https://raw.githubusercontent.com/alan-eu/tech-radar/main/tech_radar.csv)
+Its sources are now part of `alan-apps`: https://github.com/alan-eu/alan-apps/tree/main/tech-radar
